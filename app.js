@@ -76,6 +76,4 @@ app.get('/logs/:userId', async (req, res) => {
 });
 
 // Start server
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-});
+app.listen(process.env.PORT || 3000)

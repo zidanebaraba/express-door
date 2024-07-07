@@ -63,7 +63,7 @@ app.get('/logs/:userId', async (req, res) => {
 
     try {
         // Fetch logs by userId
-        const sql = 'SELECT * FROM log WHERE id = ?';
+        const sql = 'SELECT * FROM Logs WHERE id = ?';
         const params = [userId];
         const logs = await executeQuery(sql, params);
 

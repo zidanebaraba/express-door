@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const mysql = require('mysql2');
 
 const app = express();
-const port = 3000;
 
 // Middleware
 app.use(bodyParser.json());

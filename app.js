@@ -1,10 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mysql = require('mysql2');
+const cors = require('cors'); // Import cors middleware
 
 const app = express();
 
 // Middleware
+app.use(cors()); // Use cors middleware to allow all origins
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -75,4 +77,7 @@ app.get('/logs/:userId', async (req, res) => {
 });
 
 // Start server
-app.listen(process.env.PORT || 3000)
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});

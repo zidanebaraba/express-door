@@ -65,7 +65,7 @@ app.get('/logs/:userId', async (req, res) => {
 
     try {
         // Fetch logs by userId
-        const sql = 'SELECT * FROM Logs';
+        const sql = 'SELECT * FROM Logs left join Users on Logs.user_id = Users.id';
         const params = [userId];
         const logs = await executeQuery(sql, params);
 
